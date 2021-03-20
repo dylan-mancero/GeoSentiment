@@ -1,0 +1,9 @@
+#bootstrap-overrides{
+    background-color: #5ab7e8;
+}
+.comment-box {
+    display: none;
+}
+.search-container button:hover {
+    background: #ccc;
+  }

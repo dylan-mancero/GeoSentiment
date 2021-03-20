@@ -1,0 +1,25 @@
+{% extends 'geosenti/base.html' %}
+
+{% block content %}
+
+{% include 'geosenti/navbar.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div class = "welcome"></div>
+        </div>
+        <div class="col-md-7">
+        <h1 class="display-2" style="margin-left:auto;">Middle</h1>
+        <div class ="search-container">
+            <form id="formy" action ="">{% csrf_token %}
+                <input id ="theSearch"type="text" placeholder="Search.." name="search" required>
+                <button id ="searchBtn" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
