@@ -10,6 +10,7 @@ def index(request):
 def search(request):
     print(request.POST['searched'])
     input = request.POST['searched']
-    a = starter(input)
+    britishScore, usaScore = starter(input)
+    print(str(britishScore))
     return JsonResponse({'success':'success'})
 # Create your views here.

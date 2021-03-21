@@ -2,23 +2,19 @@ import tweepy
 import vaderSentiment.vaderSentiment as vader
 from itertools import zip_longest
 
-analyzer = vader.SentimentIntensityAnalyzer() #Analyzer object from vader
-
+#Gets secret tokents needed for using the twitter API from a local textfile, which is gitignored for safety purposes.
 keys = open("secretKeys.txt", "r")
-
 lines = keys.readlines()
-
 consumer_key = lines[0].rstrip()
 consumer_secret  = lines[1].rstrip()
-#consumer_key = "gV6FOnqOa0wstev3zljHrcJX6"
-#consumer_secret = "uQ8YTRGsJdnAMGUztgGvchGsW3nJIF6RhxzmqYgrYuIS9fn65R"
-
-UK_GEO = "54.364115800619615,-3.7233340937396093,505km"
-USA_GEO = "54.19653024080003,-98.03399875931424,2500km"
+#sets up tweepy api object
 auth = tweepy.AppAuthHandler(consumer_key, consumer_secret)
-
-
 api = tweepy.API(auth)
+
+UK_GEO = "54.364115800619615,-3.7233340937396093,505km"#lat,long and radius of usa, using googlemaps measurerer
+USA_GEO = "54.19653024080003,-98.03399875931424,2500km"
+
+analyzer = vader.SentimentIntensityAnalyzer() #Analyzer object from vader
 
 def starter(input):
     britishTweets = tweepy.Cursor(api.search, q=str(input),geocode = UK_GEO, lang = 'en',tweet_mode='extended').items(5)
@@ -30,39 +26,31 @@ def starter(input):
     britishSentiment = list(map(lambda tweet: analyzer.polarity_scores(tweet), britishTweets))
     usaSentiment = list(map(lambda tweet: analyzer.polarity_scores(tweet), usaTweets))
 
-    britishScore = {'pos':0, 'neg':0, 'neutral':0}
-    usaScore = {'pos':0, 'neg':0, 'neutral':0}
+    britishScore = generateScores(britishSentiment)
+    usaScore = generateScores(usaSentiment)
 
-    for score in britishSentiment:
-        compound = score['compound']
-        if compound >= 0.05:
-            current = britishScore['pos']
-            britishScore['pos'] = current + 1
-        elif compound <= -0.05:
-            current = britishScore['neg']
-            britishScore['neg'] = current + 1
-        else:
-            current = britishScore['neutral']
-            britishScore['neutral'] = current + 1
-            
-    for score in usaSentiment:
-        compound = score['compound']
-        if compound >= 0.05:
-            current = usaScore['pos']
-            usaScore['pos'] = current + 1
-        elif compound <= -0.05:
-            current = usaScore['neg']
-            usaScore['neg'] = current + 1
-        else:
-            current = usaScore['neutral']
-            usaScore['neutral'] = current + 1
-    f = open('scoreTest.txt', 'w', encoding='utf-8')
-    for score in britishSentiment:
-        f.write(str(score) + "\n")
-    f.write(str(britishScore))
-    f.close
+    return britishScore, usaScore
+
 def FullTextHandler(Tweet):
+    #this method is used to extract the full text of a tweet object, because retweets are truncated.
     try:
         return str(Tweet.retweeted_status.full_text)
     except AttributeError:  # Not a Retweet
         return str(Tweet.full_text)
+
+def generateScores(scores):
+    scoreResults = {'pos':0, 'neg':0, 'neutral':0}
+
+    for score in scores:
+        compound = score['compound']
+
+        if compound >= 0.05:
+            current = scoreResults['pos']
+            scoreResults['pos'] = current + 1
+        elif compound <= -0.05:
+            current = scoreResults['neg']
+            scoreResults['neg'] = current + 1
+        else:
+            current = scoreResults['neutral']
+            scoreResults['neutral'] = current + 1
+    return scoreResults

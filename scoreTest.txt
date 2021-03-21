@@ -1,6 +1,6 @@
-{'neg': 0.132, 'neu': 0.868, 'pos': 0.0, 'compound': -0.5848}
-{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+{'neg': 0.0, 'neu': 0.897, 'pos': 0.103, 'compound': 0.5719}
 {'neg': 0.038, 'neu': 0.782, 'pos': 0.18, 'compound': 0.8459}
-{'neg': 0.107, 'neu': 0.861, 'pos': 0.032, 'compound': -0.6199}
-{'neg': 0.154, 'neu': 0.846, 'pos': 0.0, 'compound': -0.6249}
-{'pos': 1, 'neg': 3, 'neutral': 1}
+{'neg': 0.079, 'neu': 0.848, 'pos': 0.073, 'compound': -0.0516}
+{'neg': 0.128, 'neu': 0.82, 'pos': 0.052, 'compound': -0.598}
+{'neg': 0.0, 'neu': 0.863, 'pos': 0.137, 'compound': 0.4019}
+{'pos': 3, 'neg': 2, 'neutral': 0}
