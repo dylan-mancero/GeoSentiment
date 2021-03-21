@@ -1,0 +1,69 @@
+0 Apparently, Boris Johnson broke the ministerial code by accepting, and not declaring, a £60k donation to renovate his flat. 
+
+We're assuming this story will be swept under the £15k carpet.-->{'neg': 0.084, 'neu': 0.838, 'pos': 0.078, 'compound': -0.0516}
+1 "The really frustrating thing is when Boris Johnson said, when we hit the 100,000 deaths milestone, we've truly done everything we can to minimise suffering and to minimise the loss of life... for me that is an insult to the families who have lost loved ones." @Kit_Yates_Maths https://t.co/smMGNb64AX-->{'neg': 0.229, 'neu': 0.661, 'pos': 0.11, 'compound': -0.7501}
+2 Now on 5.1 million views but not a single UK news show will broadcast it or anything like it
+
+It’s almost as if they don’t want the public to know Boris Johnson has misled Parliament practically every week since he became PM https://t.co/jWou7eSxbQ-->{'neg': 0.0, 'neu': 0.897, 'pos': 0.103, 'compound': 0.5719}
+3 When all you have is a choice between a greasy lying Tory with all the charisma of an Estate Agent or Boris Johnson, why on earth would you want to stay part of the UK????
+
+#NorthernIndependence https://t.co/JvF95VO2Lk-->{'neg': 0.107, 'neu': 0.861, 'pos': 0.032, 'compound': -0.6199}
+4 Now on 5.1 million views but not a single UK news show will broadcast it or anything like it
+
+It’s almost as if they don’t want the public to know Boris Johnson has misled Parliament practically every week since he became PM https://t.co/jWou7eSxbQ-->{'neg': 0.0, 'neu': 0.897, 'pos': 0.103, 'compound': 0.5719}
+5 Happy to tweet this every day if needed. 7 times Boris Johnson has misled the House of Commons. Come on
+
+@BBCNews @itvnews  @Channel4News @5_News @SkyNews
+
+I’ve done the hard work, NOW DO YOUR JOB. Broadcast it &amp; hold this slippery truth twister to account https://t.co/PlvEkEij1V-->{'neg': 0.028, 'neu': 0.85, 'pos': 0.121, 'compound': 0.6808}
+6 Times long read:
+
+When Dominic Cummings appears before MPs on May 26, his evidence will focus on 5 critical days in September
+
+A deep dive into how Cummings, Case, Whitty &amp; Vallance tried - and ultimately failed - to convince PM to implement a lockdown
+
+https://t.co/tsxGj0ax7c-->{'neg': 0.111, 'neu': 0.85, 'pos': 0.04, 'compound': -0.5574}
+7 Happy to tweet this every day if needed. 7 times Boris Johnson has misled the House of Commons. Come on
+
+@BBCNews @itvnews  @Channel4News @5_News @SkyNews
+
+I’ve done the hard work, NOW DO YOUR JOB. Broadcast it &amp; hold this slippery truth twister to account https://t.co/PlvEkEij1V-->{'neg': 0.028, 'neu': 0.85, 'pos': 0.121, 'compound': 0.6808}
+8 Now on 5.1 million views but not a single UK news show will broadcast it or anything like it
+
+It’s almost as if they don’t want the public to know Boris Johnson has misled Parliament practically every week since he became PM https://t.co/jWou7eSxbQ-->{'neg': 0.0, 'neu': 0.897, 'pos': 0.103, 'compound': 0.5719}
+9 Now on 5.1 million views but not a single UK news show will broadcast it or anything like it
+
+It’s almost as if they don’t want the public to know Boris Johnson has misled Parliament practically every week since he became PM https://t.co/jWou7eSxbQ-->{'neg': 0.0, 'neu': 0.897, 'pos': 0.103, 'compound': 0.5719}
+
+
+USA.............
+
+0 "Boris Johnson's party has reportedly accepted donations from 9 Russian figures with links to the Russian government."
+
+"Boris Johnson was photographed with a suspected Russian spy who called him a 'good friend'."
+
+🏴‍☠️-->{'neg': 0.042, 'neu': 0.714, 'pos': 0.243, 'compound': 0.8402}
+1 "Boris Johnson's party has reportedly accepted donations from 9 Russian figures with links to the Russian government."
+
+"Boris Johnson was photographed with a suspected Russian spy who called him a 'good friend'."
+
+🏴‍☠️-->{'neg': 0.042, 'neu': 0.714, 'pos': 0.243, 'compound': 0.8402}
+2 A long, extraordinary , very perceptive but very worrying read.  https://t.co/fyqMiXo9gB-->{'neg': 0.261, 'neu': 0.739, 'pos': 0.0, 'compound': -0.5483}
+3 @paulhutcheon Why can't you report Boris's breaking of the ministerial code with the same frenzied hysterical approach you do for for our FM who has not been found guilty of anything. He's been found guilty yet no head hunting?-->{'neg': 0.14, 'neu': 0.806, 'pos': 0.054, 'compound': -0.4153}
+4 The Russia Report becomes public knowledge.
+Boris Johnson: "Nothing to see."
+The Russia Report — "Lot's to see."
+Boris Johnson: "No, no investigation into the findings." 
+
+His insecurity and fear is visible. 🏴‍☠️-->{'neg': 0.194, 'neu': 0.806, 'pos': 0.0, 'compound': -0.802}
+5 Boris gave money to ex-wives to hide it from bankruptcy administrators, court told. https://t.co/nMzm0TJepF-->{'neg': 0.116, 'neu': 0.884, 'pos': 0.0, 'compound': -0.1779}
+6 The Russia Report becomes public knowledge.
+Boris Johnson: "Nothing to see."
+The Russia Report — "Lot's to see."
+Boris Johnson: "No, no investigation into the findings." 
+
+His insecurity and fear is visible. 🏴‍☠️-->{'neg': 0.194, 'neu': 0.806, 'pos': 0.0, 'compound': -0.802}
+7 BREAKING: Court Order shows Boris Johnson misled Parliament over Covid contracts https://t.co/zzm9o7h2LN #goodlawproject-->{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+8 @RuthDavidsonMSP Don’t be impressed with Ruth here. Boris has already told her it won’t happen  
+It’s how they work.-->{'neg': 0.0, 'neu': 0.853, 'pos': 0.147, 'compound': 0.4767}
+9 @Soc_Sciences Boris Johnsons mop is deliberate, as is the use of the name Boris rather than hid first name his parents and family use which is Alexander.  Its a character, he deliberately messes his hair before an interview to distract us from tge fact he is a fool out his depth. #ToryFraud-->{'neg': 0.117, 'neu': 0.883, 'pos': 0.0, 'compound': -0.6705}

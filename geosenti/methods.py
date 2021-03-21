@@ -1,6 +1,6 @@
 import tweepy
 import vaderSentiment.vaderSentiment as vader
-import itertools
+from itertools import zip_longest
 
 analyzer = vader.SentimentIntensityAnalyzer() #Analyzer object from vader
 
@@ -21,24 +21,30 @@ auth = tweepy.AppAuthHandler(consumer_key, consumer_secret)
 api = tweepy.API(auth)
 
 def starter(input):
-
     britishTweets = tweepy.Cursor(api.search, q=str(input),geocode = UK_GEO, lang = 'en',tweet_mode='extended').items(10)
     usaTweets = tweepy.Cursor(api.search, q=str(input),geocode = USA_GEO, lang = 'en',tweet_mode='extended').items(10)
-
-    britishSentiment = map(TweetHandler, britishTweets)
-    usaSentiment = map(TweetHandler, usaTweets)
+ 
+    britishTweets = list(map(FullTextHandler, britishTweets))
+    usaTweets = list(map(FullTextHandler, usaTweets))
     
+    britishSentiment = list(map(lambda tweet: str(analyzer.polarity_scores(tweet)), britishTweets))
+    usaSentiment = list(map(lambda tweet: str(analyzer.polarity_scores(tweet)), usaTweets))
+
     f = open("tests.txt", "w", encoding="utf-8")
+    count = 0
+    for Tweet,Senti in zip_longest(britishTweets, britishSentiment):
+        f.write(str(count) + " " + Tweet + "-->" + Senti + "\n")
+        count += 1
 
-    for Tweet,TweetSenti in itertools.zip_longest(britishTweets, britishSentiment):
-        f.write(Tweet.full_text+", "+str(TweetSenti)+"\n")
-    f.write("\n\nUSA.............")
-    for Tweet,TweetSenti in itertools.zip_longest(usaTweets, usaSentiment):
-        f.write(Tweet.full_text+", "+str(TweetSenti)+"\n")
+    f.write("\n\nUSA.............\n\n")
+    count = 0
 
-    
-def TweetHandler(Tweet):
+    for Tweet,Senti in zip_longest(usaTweets, usaSentiment):
+        f.write(str(count) + " " + Tweet + "-->" + Senti + "\n")
+        count += 1
+ 
+def FullTextHandler(Tweet):
     try:
-        return analyzer.polarity_scores(Tweet.retweeted_status.full_text)
+        return str(Tweet.retweeted_status.full_text)
     except AttributeError:  # Not a Retweet
-        return analyzer.polarity_scores(Tweet.full_text)
+        return str(Tweet.full_text)
