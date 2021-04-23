@@ -1,9 +1,51 @@
-#bootstrap-overrides{
-    background-color: #5ab7e8;
-}
+
 .comment-box {
     display: none;
 }
+.search-container{
+    margin-top: 100px;
+    background-color: aqua;
+    text-align: center;
+}
 .search-container button:hover {
     background: #ccc;
+}
+main {
+    display: table;
+    width: 100%;
+    min-height: 1000px;
   }
+.container {
+  display: table-row; 
+}
+.sidebar-left {
+  height: 300px;
+  width: 20%;
+  background:#47acff;
+} 
+.center-col {
+  width: 60%;
+  background:#e2e8ec;
+}
+.sidebar-right {
+  width: 20%;
+  background:#47acff;
+}
+.sidebar-left,
+.center-col,
+.sidebar-right {
+  display: table-cell;
+} 
+@media (max-width: 900px) {
+  main {
+    display: block;
+  }
+  .container,
+  .sidebar-left,
+  .center-col,
+  .sidebar-right {
+    display: block;
+    width: 100%;
+    min-height: 100%;
+  }
+}

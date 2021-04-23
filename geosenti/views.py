@@ -12,5 +12,9 @@ def search(request):
     input = request.POST['searched']
     britishScore, usaScore = starter(input)
     print(str(britishScore))
-    return JsonResponse({'success':'success'})
+    return JsonResponse({
+        'success':'success',
+        'left':britishScore,
+        'right':usaScore
+    })
 # Create your views here.

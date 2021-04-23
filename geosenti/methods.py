@@ -17,8 +17,8 @@ USA_GEO = "54.19653024080003,-98.03399875931424,2500km"
 analyzer = vader.SentimentIntensityAnalyzer() #Analyzer object from vader
 
 def starter(input):
-    britishTweets = tweepy.Cursor(api.search, q=str(input),geocode = UK_GEO, lang = 'en',tweet_mode='extended').items(5)
-    usaTweets = tweepy.Cursor(api.search, q=str(input),geocode = USA_GEO, lang = 'en',tweet_mode='extended').items(5)
+    britishTweets = tweepy.Cursor(api.search, q=str(input),geocode = UK_GEO, lang = 'en',tweet_mode='extended').items(10)
+    usaTweets = tweepy.Cursor(api.search, q=str(input),geocode = USA_GEO, lang = 'en',tweet_mode='extended').items(10)
  
     britishTweets = list(map(FullTextHandler, britishTweets))
     usaTweets = list(map(FullTextHandler, usaTweets))
