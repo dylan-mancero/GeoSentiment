@@ -1,4 +1,12 @@
-
+.myLoader{
+  text-align: center;
+margin: auto;
+width: 60%;
+padding: 10px;
+}
+.row{
+  text-align: center;
+}
 .comment-box {
     display: none;
 }
@@ -14,7 +22,7 @@ main {
     display: table;
     width: 100%;
     min-height: 1000px;
-  }
+}
 .container {
   display: table-row; 
 }
@@ -26,6 +34,7 @@ main {
 .center-col {
   width: 60%;
   background:#e2e8ec;
+  margin: auto;
 }
 .sidebar-right {
   width: 20%;

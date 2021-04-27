@@ -10,15 +10,21 @@ consumer_secret  = lines[1].rstrip()
 #sets up tweepy api object
 auth = tweepy.AppAuthHandler(consumer_key, consumer_secret)
 api = tweepy.API(auth)
-
-UK_GEO = "54.364115800619615,-3.7233340937396093,505km"#lat,long and radius of usa, using googlemaps measurerer
-USA_GEO = "54.19653024080003,-98.03399875931424,2500km"
+geoList = {
+    "UK_GEO" : "54.364115800619615,-3.7233340937396093,505km",#lat,long and radius of usa, using googlemaps measurerer
+    "USA_GEO" : "54.19653024080003,-98.03399875931424,2500km",
+    "AUS_GEO" : "-27.606338814377246,135.2637427077579,2000km",
+    "JAMAICA_GEO" : "18.13788732831686,-77.24297002881919,128km",
+    "NEWZEALAND_GEO" : "-41.876952864666166,173.64569158277476,854km",
+    "INDIA_GEO" : "20.09904976266362,79.35616263260019,1300km",
+    "NIGERIA_GEO" : "8.574482569303768,7.542770727835754,500km"
+}
 
 analyzer = vader.SentimentIntensityAnalyzer() #Analyzer object from vader
 
-def starter(input):
-    britishTweets = tweepy.Cursor(api.search, q=str(input),geocode = UK_GEO, lang = 'en',tweet_mode='extended').items(10)
-    usaTweets = tweepy.Cursor(api.search, q=str(input),geocode = USA_GEO, lang = 'en',tweet_mode='extended').items(10)
+def starter(input, country1, country2):
+    britishTweets = tweepy.Cursor(api.search, q=str(input),geocode = geoList[country1], lang = 'en',tweet_mode='extended').items(100)
+    usaTweets = tweepy.Cursor(api.search, q=str(input),geocode = geoList[country2], lang = 'en',tweet_mode='extended').items(100)
  
     britishTweets = list(map(FullTextHandler, britishTweets))
     usaTweets = list(map(FullTextHandler, usaTweets))

@@ -1,7 +1,19 @@
 $(function() {
+    var leftChart;
+    var rightChart;
     $("#formy").submit(function(e){
         e.preventDefault();
-        var s = this.elements.search.value;
+        const searchQuery = this.elements.search.value;
+        const country1 = this.elements.Country1.value;
+        const country2 = this.elements.Country2.value;
+        if (country1===country2) {
+            alert("Must be different locations")
+            return
+        }
+        if (leftChart) {
+            leftChart.destroy();
+            rightChart.destroy();
+        }
         $.ajax({
             type: "POST",
             url: "/geosenti/search/",
@@ -9,33 +21,18 @@ $(function() {
                 "X-CSRFToken": $("[name=csrfmiddlewaretoken]").val(),
             },
             data: {
-                "searched":s,
+                "searched":searchQuery,
+                "country1":country1,
+                "country2":country2
             },
             success: function (response) {
                 
                 const leftData = response['left']
                 const rightData = response['right']
-                var ctx = $('#leftChart');
-                var myChart = new Chart(ctx, {
-                    type: 'doughnut',
-                    data :{
-                        labels: [
-                            'Negative',
-                            'Positive',
-                            'Neutral'
-                          ],
-                          datasets: [{
-                            label: 'left Data',
-                            data: [leftData['neg'], leftData['pos'], leftData['neutral']],
-                            backgroundColor: [
-                              'rgb(255, 99, 132)',
-                              'rgb(54, 162, 235)',
-                              'rgb(255, 205, 86)'
-                            ],
-                            hoverOffset: 4
-                          }]
-                    }
-                });
+                const ctxl = $('#leftChart');
+                const ctxr = $('#rightChart');
+                leftChart = createChart(ctxl, leftData)
+                rightChart = createChart(ctxr, rightData)
             }
         });
     });

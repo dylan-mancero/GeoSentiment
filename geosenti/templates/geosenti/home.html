@@ -11,6 +11,25 @@
       <div class ="search-container">
           <p>Enter a query, for best results you can add operators aswell!</p>
           <form id="formy" action ="">{% csrf_token %}
+              <label for="Country1">Choose two locations:</label>
+              <select id="country1" name="Country1">
+                <option value="UK_GEO">UK and Ireland</option>
+                <option value="USA_GEO">North America</option>
+                <option value="AUS_GEO">Australia</option>
+                <option value="JAMAICA_GEO">Jamaica</option>
+                <option value="INDIA_GEO">India</option>
+                <option value="NIGERIA_GEO">Nigeria</option>
+                <option value="NEWZEALAND_GEO">New Zealand</option>
+              </select>
+              <select id="country2" name="Country2">
+                <option value="UK_GEO">UK and Ireland</option>
+                <option value="USA_GEO">North America</option>
+                <option value="AUS_GEO">Australia</option>
+                <option value="JAMAICA_GEO">Jamaica</option>
+                <option value="INDIA_GEO">India</option>
+                <option value="NIGERIA_GEO">Nigeria</option>
+                <option value="NEWZEALAND_GEO">New Zealand</option>
+              </select>
               <input id ="theSearch"type="text" placeholder="Search.." name="search" required>
               <button id ="searchBtn" type="submit"><i class="fa fa-search"></i></button>
           </form>
@@ -18,11 +37,18 @@
       <div class = "row">
         <div class = "col">
           <div class = "charts">
-            <canvas id="leftChart" width="100%" height="100%"></canvas>
+            <canvas id="leftChart" width="200px" height="200px"></canvas>
           </div>
         </div>
         <div class = "col">
-          righty
+          <div class = "charts">
+            <canvas id = "rightChart" width = "200px" height = "200px"></canvas>
+          </div>
+        </div>
+        <div class="myLoader">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
         </div>
       </div>
     </div>

@@ -9,8 +9,14 @@ def index(request):
     return render(request,'geosenti/home.html',context)
 def search(request):
     print(request.POST['searched'])
+    print(request.POST['country1'])
+    print(request.POST['country2'])
+
     input = request.POST['searched']
-    britishScore, usaScore = starter(input)
+    country1 = request.POST['country1']
+    country2 = request.POST['country2']
+
+    britishScore, usaScore = starter(input, country1, country2)
     print(str(britishScore))
     return JsonResponse({
         'success':'success',
