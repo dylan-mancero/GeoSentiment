@@ -39,6 +39,7 @@ def starter(input, country1, country2):
 
 def FullTextHandler(Tweet):
     #this method is used to extract the full text of a tweet object, because retweets are truncated.
+    # taken from https://docs.tweepy.org/en/latest/extended_tweets.html
     try:
         return str(Tweet.retweeted_status.full_text)
     except AttributeError:  # Not a Retweet

@@ -8,19 +8,17 @@ def index(request):
     }
     return render(request,'geosenti/home.html',context)
 def search(request):
-    print(request.POST['searched'])
-    print(request.POST['country1'])
-    print(request.POST['country2'])
 
     input = request.POST['searched']
     country1 = request.POST['country1']
     country2 = request.POST['country2']
 
-    britishScore, usaScore = starter(input, country1, country2)
-    print(str(britishScore))
+    leftData, rightData = starter(input, country1, country2)
+    print(str(leftData))
+    print(str(rightData))
     return JsonResponse({
         'success':'success',
-        'left':britishScore,
-        'right':usaScore
+        'left':leftData,
+        'right':rightData
     })
 # Create your views here.
