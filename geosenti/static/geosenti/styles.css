@@ -1,8 +1,7 @@
 .myLoader{
-  text-align: center;
-margin: auto;
-width: 60%;
-padding: 10px;
+  padding: 10px;
+  padding-left: 50%;
+  padding-right: 45%;
 }
 .row{
   text-align: center;
@@ -11,12 +10,12 @@ padding: 10px;
     display: none;
 }
 .search-container{
-    margin-top: 100px;
-    background-color: aqua;
+    margin-top: 10em;
+    background-color: #f0f0f0;
     text-align: center;
 }
 .search-container button:hover {
-    background: #ccc;
+    background: #f0f0f0;
 }
 main {
     display: table;
@@ -29,16 +28,16 @@ main {
 .sidebar-left {
   height: 300px;
   width: 20%;
-  background:#47acff;
+  background:#f0f0f0;
 } 
 .center-col {
   width: 60%;
-  background:#e2e8ec;
+  background:#f0f0f0;
   margin: auto;
 }
 .sidebar-right {
   width: 20%;
-  background:#47acff;
+  background:#f0f0f0;
 }
 .sidebar-left,
 .center-col,

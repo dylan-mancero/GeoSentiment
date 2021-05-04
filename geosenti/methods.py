@@ -23,19 +23,19 @@ geoList = {
 analyzer = vader.SentimentIntensityAnalyzer() #Analyzer object from vader
 
 def starter(input, country1, country2):
-    britishTweets = tweepy.Cursor(api.search, q=str(input),geocode = geoList[country1], lang = 'en',tweet_mode='extended').items(100)
-    usaTweets = tweepy.Cursor(api.search, q=str(input),geocode = geoList[country2], lang = 'en',tweet_mode='extended').items(100)
+    country_1_tweets = tweepy.Cursor(api.search, q=str(input),geocode = geoList[country1], lang = 'en',tweet_mode='extended').items(200)
+    country_2_tweets = tweepy.Cursor(api.search, q=str(input),geocode = geoList[country2], lang = 'en',tweet_mode='extended').items(200)
  
-    britishTweets = list(map(FullTextHandler, britishTweets))
-    usaTweets = list(map(FullTextHandler, usaTweets))
+    country_1_tweets = list(map(FullTextHandler, country_1_tweets))
+    country_2_tweets = list(map(FullTextHandler, country_2_tweets))
     
-    britishSentiment = list(map(lambda tweet: analyzer.polarity_scores(tweet), britishTweets))
-    usaSentiment = list(map(lambda tweet: analyzer.polarity_scores(tweet), usaTweets))
+    country_1_senti = list(map(lambda tweet: analyzer.polarity_scores(tweet), country_1_tweets))
+    country_2_senti = list(map(lambda tweet: analyzer.polarity_scores(tweet), country_2_tweets))
 
-    britishScore = generateScores(britishSentiment)
-    usaScore = generateScores(usaSentiment)
-
-    return britishScore, usaScore
+    country_1_score = generateScores(country_1_senti)
+    country_2_score = generateScores(country_2_senti)
+    
+    return country_1_score, country_2_score
 
 def FullTextHandler(Tweet):
     #this method is used to extract the full text of a tweet object, because retweets are truncated.

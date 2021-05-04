@@ -1,4 +1,6 @@
 $(function() {
+    const spinner = $(".myLoader");
+    spinner.hide();
     var leftChart;
     var rightChart;
     $("#formy").submit(function(e){
@@ -14,6 +16,7 @@ $(function() {
             leftChart.destroy();
             rightChart.destroy();
         }
+        spinner.show();
         $.ajax({
             type: "POST",
             url: "/geosenti/search/",
@@ -26,7 +29,7 @@ $(function() {
                 "country2":country2
             },
             success: function (response) {
-                
+                spinner.hide();
                 const leftData = response['left']
                 const rightData = response['right']
                 const ctxl = $('#leftChart');
